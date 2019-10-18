@@ -16,3 +16,7 @@ if [ ! -d "$1" ]; then
     exit -2
 fi
 DIR="$1"
+
+command -v flac >/dev/null 2>&1 || { echo >&2 "flac encoder doesn't appear to be installed.  Aborting."; exit 1; }
+
+find $DIR -type f -iname "*.wav" -exec flac -4V --keep-foreign-metadata {} \;
