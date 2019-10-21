@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 usage () {
     echo "usage: ${0##*/} path_to_recording_folder"
 }
