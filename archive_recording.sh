@@ -19,6 +19,7 @@ if [ ! -d "$1" ]; then
 fi
 
 command -v flac >/dev/null 2>&1 || { echo >&2 "flac encoder doesn't appear to be installed.  Aborting."; exit 1; }
+command -v 7zr >/dev/null 2>&1 || { echo >&2 "7zr doesn't appear to be installed.  Aborting."; exit 1; }
 
 cd "$1"
 DIR=$(basename "$(pwd)")
